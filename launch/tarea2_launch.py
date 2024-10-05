@@ -16,18 +16,22 @@ from launch.actions import ExecuteProcess
 
 
 def generate_launch_description():
-    obstacles_config = os.path.join(
-        get_package_share_directory('usv_missions'),
-        'config',
-        'obstacles.yaml'
+    joint_twist_publisher_node = Node(
+        package='vanttec_learning',
+        executable='joint_twist_publisher_node',
     )
 
-    obstacle_publisher_node = Node(
-        package='usv_missions',
-        executable='obstacle_publisher_node',
-        parameters=[obstacles_config],
+    urdf_display_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([
+                FindPackageShare('vanttec_learning'),
+                'launch',
+                'urdf_display.launch.py'
+            ])
+        ]),
     )
 
     return LaunchDescription([
-        obstacle_publisher_node
+        joint_twist_publisher_node,
+        urdf_display_launch,
     ])

@@ -15,20 +15,28 @@ find_package(visualization_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(turtlesim REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 add_executable(turtle_tf2_publisher_node src/turtle_tf2_publisher_node.cpp)
-ament_target_dependencies(turtle_tf2_publisher_node rclcpp std_msgs geometry_msgs visualization_msgs Eigen3 tf2_ros tf2 turtlesim)
+ament_target_dependencies(turtle_tf2_publisher_node rclcpp std_msgs geometry_msgs visualization_msgs tf2_ros tf2 turtlesim)
 target_compile_features(turtle_tf2_publisher_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+add_executable(joint_twist_publisher_node src/joint_twist_publisher_node.cpp)
+ament_target_dependencies(joint_twist_publisher_node rclcpp std_msgs geometry_msgs visualization_msgs  sensor_msgs)
+target_compile_features(joint_twist_publisher_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 install(TARGETS
   # usv_master
   turtle_tf2_publisher_node
+  joint_twist_publisher_node
   DESTINATION lib/${PROJECT_NAME})
 
 # Resources
 install(DIRECTORY
   launch
+  urdf
+  rviz
   DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)

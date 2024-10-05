@@ -18,3 +18,12 @@ ros2 run turtlesim turtle_teleop_key
 # Fourth terminal
 rviz2
 ```
+
+## Tarea #2
+```Shell
+# First terminal
+ros2 launch vanttec_learning tarea2_launch.py
+
+# Second terminal
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
