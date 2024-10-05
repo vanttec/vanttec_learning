@@ -27,3 +27,12 @@ ros2 launch vanttec_learning tarea2_launch.py
 # Second terminal
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+## Tarea #3
+```Shell
+# First terminal
+ros2 launch vanttec_learning tarea3_launch.py
+
+# Second terminal
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
