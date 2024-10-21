@@ -35,12 +35,17 @@ add_executable(turtle_follower_node src/turtle_follower_node.cpp)
 ament_target_dependencies(turtle_follower_node rclcpp std_msgs geometry_msgs visualization_msgs tf2_ros tf2 tf2_geometry_msgs sensor_msgs)
 target_compile_features(turtle_follower_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
+add_executable(base_node src/base_node.cpp)
+ament_target_dependencies(base_node rclcpp std_msgs)
+target_compile_features(base_node PUBLIC c_std_99 cxx_std_17)
+
 install(TARGETS
   # usv_master
   turtle_tf2_publisher_node
   joint_twist_publisher_node
   robot_state_publisher_node
   turtle_follower_node
+  base_node
   DESTINATION lib/${PROJECT_NAME})
 
 # Resources
