@@ -1,8 +1,6 @@
 # vanttec_learning
 ROS2 Tasks Solutions Package
 
-Video: "Una disculpa chicos, después de guardar la sesión en mi compu me di cuenta que no tiene audio, entonces no le encontré sentido de subirlo jajj. Peeeero, todos los comandos que corrí en las demos vienen en la presentación. De nuevo, una disculpa, pero si les surgen dudas con las tareas o con lo que sea me pueden contactar a mi correo institucional: A01552369@tec.mx, o venir al laboratorio de VantTec (A4-431). - Max"
-
 Presentación:
 https://www.canva.com/design/DAF_sqpfmBM/lra3OneJylzecdU_JVLSZA/edit?utm_content=DAF_sqpfmBM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
